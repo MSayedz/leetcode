@@ -12,7 +12,7 @@ class Solution {
                intersectedNumbers.add(nums2[i]);
             }        
         }
-        System.out.println(intersectedNumbers.size());
+        
         int counter = 0;
         int[] result = new int[intersectedNumbers.size()];
         for(int i : intersectedNumbers){
