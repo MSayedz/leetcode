@@ -1,16 +1,15 @@
 class Solution {
     public int strStr(String haystack, String needle) {
-        if(needle == null || "".equals(needle)) return 0;
+        int m = haystack.length();
+        int n = needle.length();
         
-        if(haystack != null && haystack.contains(needle)){
-            char[] needleChars = needle.toCharArray();
-            char[] haystackChars = haystack.toCharArray();
-            for(int i = 0; i< haystackChars.length;i++){ if(haystack.substring(i,i+needleChars.length).equals(needle)){
-                    return i;
-                }
+        if(m < n){return -1;}
+        
+        for(int i = 0; i <= (m - n); i++){
+            if (haystack.substring(i,i+n).equals(needle)) {
+                return i;
             }
         }
-        
         return -1;
     }
 }
