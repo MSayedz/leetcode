@@ -1,6 +1,5 @@
 class Solution {
     public int numJewelsInStones(String J, String S) {
-        
         int[] letters = new int[256];
         int count = 0;
         for (int i=0; i<S.length(); i++)
