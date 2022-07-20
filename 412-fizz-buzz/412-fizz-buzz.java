@@ -1,23 +1,20 @@
 class Solution {
+    final static String FIZZ = "Fizz";
+    final static String BUZZ = "Buzz";
+    final static String FIZZ_BUZZ = "FizzBuzz";
     public List<String> fizzBuzz(int n) {
+        List<String> result = new ArrayList<>();
         
-        List<String> res = new LinkedList();
-        int cnt3 = 3;
-        int cnt5 = 5;
-        for(int i=1;i<=n;i++){
-            if(i == cnt3 && i == cnt5){
-                res.add("FizzBuzz");
-                cnt3 += 3;
-                cnt5 += 5;
-            }else if(i == cnt3){
-                cnt3 += 3;
-                res.add("Fizz");
-            }else if(i == cnt5){
-                cnt5 += 5;
-                res.add("Buzz");
-            }else
-                res.add(Integer.toString(i));
-        }
-        return res;
+        for(int i = 1; i<= n; i++)
+            if(i % 15 == 0)
+               result.add(FIZZ_BUZZ);
+            else if(i % 5 == 0)
+               result.add(BUZZ);
+            else if(i % 3 == 0)
+               result.add(FIZZ);
+            else
+               result.add(String.valueOf(i));
+        
+        return result;
     }
 }
