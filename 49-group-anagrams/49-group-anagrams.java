@@ -16,8 +16,9 @@ class Solution {
         }
         
         List<List<String>> res = new ArrayList<>();
-        for(String key: map.keySet())
+        for(String key: map.keySet()){
             res.add(map.get(key));
+        }
         
         return res;
     }
