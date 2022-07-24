@@ -102,8 +102,7 @@ class MyLinkedList {
       pred = head;
       for(int i = 0; i < index; ++i) pred = pred.next;
       succ = pred.next.next;
-    }
-    else {
+    } else {
       succ = tail;
       for (int i = 0; i < size - index - 1; ++i) succ = succ.prev;
       pred = succ.prev.prev;
