@@ -1,9 +1,11 @@
 class Solution {
     public char repeatedCharacter(String s) {
-        Set<Character> chars = new HashSet<Character>();
-        for(char cur:s.toCharArray())
-            if(!chars.add(cur))
+        int[] arr = new int[256];
+        for(char cur:s.toCharArray()){
+            arr[cur-'a']++;
+            if(arr[cur-'a']>1)
                 return cur;
+        }
         return ' ';
     }
 }
