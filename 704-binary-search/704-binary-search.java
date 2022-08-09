@@ -1,18 +1,22 @@
 class Solution {
     public int search(int[] nums, int target) {
-        return binarySearch(nums, target, 0, nums.length-1);
-    }
-    
-    public int binarySearch(int[] nums, int target, int start, int end) {
-        if(start>end)
-            return -1;
-        int mid = (end + (end-start))/2;
-        
-        if(nums[mid] == target)
-            return mid;
-        else if(nums[mid] < target)
-            return binarySearch(nums, target, mid+1, end);
-        else
-            return binarySearch(nums, target, start, mid-1);        
+        if(nums == null || nums.length == 0)
+			return -1;
+
+		int left = 0, right = nums.length;
+		while(left < right){
+		    int mid = left + (right - left) / 2;
+		    if(nums[mid] == target)
+		    	return mid;
+		    else if(nums[mid] < target)
+		    	left = mid + 1;
+		    else
+		    	right = mid;
+		 }
+
+		if(left != nums.length && nums[left] == target) 
+	  		return left;
+
+	  	return -1;
     }
 }
