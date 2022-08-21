@@ -3,8 +3,9 @@ class Solution {
     public int uniqueMorseRepresentations(String[] words) {
         codes = new String[]{".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
         Set<String> set = new HashSet<String>();
-        for(String s: words)
+        for(String s: words){
             set.add(getCode(s));
+        }
         return set.size();
     }
     
