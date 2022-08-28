@@ -9,17 +9,18 @@ class Solution {
     public void reverse(int[] image){
         int start = 0;
         int end = image.length - 1;
-        while(start<=end){
-            int temp = image[start];
-            image[start] = invert(image[end]);
-            image[end] =invert(temp);
-            start++;
-            end--;
+        int temp = image[start];
+        
+        while(start<=end){            
+            temp = image[start];
+            image[start++] = invert(image[end]);
+            image[end--] = invert(temp);
         }
     }
     public int invert(int i){
         return i == 0 ? 1 :0;
     }
+    
     /*
     int rowSize = image[0].length;
         for(int i=0;i<image.length;i++){
