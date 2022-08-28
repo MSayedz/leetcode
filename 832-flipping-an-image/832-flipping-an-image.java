@@ -1,18 +1,18 @@
 class Solution {
-    public int[][] flipAndInvertImage(int[][] A) {
-        for(int i=0; i<A[0].length; i++){
-            reverse(A[i]);
+    public int[][] flipAndInvertImage(int[][] image) {
+        for(int i=0; i<image[0].length; i++){
+            reverse(image[i]);
         }
-        return A;
+        return image;
     }
 
-    public void reverse(int[] A){
+    public void reverse(int[] image){
         int start = 0;
-        int end = A.length - 1;
+        int end = image.length - 1;
         while(start<=end){
-            int temp = A[start];
-            A[start] = invert(A[end]);
-            A[end] =invert(temp);
+            int temp = image[start];
+            image[start] = invert(image[end]);
+            image[end] =invert(temp);
             start++;
             end--;
         }
