@@ -6,20 +6,22 @@ class Solution {
             map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
         }
 
-//         PriorityQueue<Integer> maxHeap = 
-//                          new PriorityQueue<>((a,b)-> map.get(a) - map.get(b));
-//         for (int n: map.keySet()) {
-//           maxHeap.add(n);
-//           if (maxHeap.size() > k) 
-//               maxHeap.poll();    
-//         }
+        /*
+        PriorityQueue<Integer> maxHeap = 
+                         new PriorityQueue<>((a,b)-> map.get(a) - map.get(b));
+        for (int n: map.keySet()) {
+          maxHeap.add(n);
+          if (maxHeap.size() > k) 
+              maxHeap.poll();    
+        }
         
-//         int[] res = new int[k];
-//         for(int i = k - 1; i >= 0; --i) {
-//             res[i] = maxHeap.poll();
-//         }
-//         return res;
-
+        int[] res = new int[k];
+        for(int i = k - 1; i >= 0; --i) {
+            res[i] = maxHeap.poll();
+        }
+        return res;
+        */
+        
         /*
          PriorityQueue<Map.Entry<Integer, Integer>> minHeap =
              new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
