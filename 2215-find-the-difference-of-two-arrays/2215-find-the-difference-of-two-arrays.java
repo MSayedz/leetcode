@@ -3,7 +3,9 @@ class Solution {
         
         Set<Integer> set1 = Arrays.stream(nums1).boxed().collect(Collectors.toSet());
         Set<Integer> set2 = Arrays.stream(nums2).filter(n -> !set1.contains(n)).boxed().collect(Collectors.toSet());
+        
         Arrays.stream(nums2).forEach(set1::remove);
+        
         return Arrays.asList(new ArrayList<>(set1), new ArrayList<>(set2));
         
 //         Set<Integer> nums1Set = new HashSet<>();        
