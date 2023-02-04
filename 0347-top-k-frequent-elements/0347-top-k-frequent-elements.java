@@ -20,17 +20,12 @@ class Solution {
 //         }
 //         return res;
         
-        PriorityQueue<Map.Entry<Integer, Integer>> maxHeap =
-            new PriorityQueue<>((a, b) -> a.getValue() - b.getValue());
+        PriorityQueue<Map.Entry<Integer, Integer>> minHeap =
+            new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
 
-        for (Map.Entry entry : map.entrySet()){
-            maxHeap.add(entry);
-            if (maxHeap.size() > k){
-                maxHeap.poll();
-            }
-        }
+        minHeap.addAll(map.entrySet());
         
-        return Stream.generate(maxHeap::poll).limit(maxHeap.size())
+        return Stream.generate(minHeap::poll).limit(k)
             .map(Map.Entry::getKey).mapToInt(Integer::intValue).toArray();
     }
 }
