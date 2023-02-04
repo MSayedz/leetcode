@@ -19,16 +19,16 @@ class Solution {
 //             res[i] = maxHeap.poll();
 //         }
 //         return res;
-        PriorityQueue<Map.Entry<Integer, Integer>> pq =
+        PriorityQueue<Map.Entry<Integer, Integer>> maxHeap =
             new PriorityQueue<>((a, b) -> a.getValue() - b.getValue());
 
         for (Map.Entry entry : map.entrySet()){
-            pq.add(entry);
-            if (pq.size() > k)
-                pq.poll();
+            maxHeap.add(entry);
+            if (maxHeap.size() > k)
+                maxHeap.poll();
         }
         
-        return Stream.generate(pq::poll).limit(pq.size())
-            .map(x -> x.getKey()).mapToInt(Integer::intValue).toArray();
+        return Stream.generate(maxHeap::poll).limit(maxHeap.size())
+            .map(Map.Entry::getKey).mapToInt(Integer::intValue).toArray();
     }
 }
