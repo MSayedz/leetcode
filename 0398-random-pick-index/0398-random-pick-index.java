@@ -1,6 +1,6 @@
 class Solution {
-
     private Map<Integer, List<Integer>> map = new HashMap<>();
+    private Random random = new Random();
     
     public Solution(int[] nums) {
         map = new HashMap<>();
@@ -12,7 +12,7 @@ class Solution {
     
     public int pick(int target) {
         List<Integer> curList = this.map.get(target);
-        return curList.get(new Random().nextInt(curList.size()));
+        return curList.get(random.nextInt(curList.size()));
     }
 }
 
