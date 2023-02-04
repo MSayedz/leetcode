@@ -19,13 +19,22 @@ class Solution {
 //             res[i] = maxHeap.poll();
 //         }
 //         return res;
-        
-        PriorityQueue<Map.Entry<Integer, Integer>> minHeap =
-            new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
 
-        minHeap.addAll(map.entrySet());
+        /*
+         PriorityQueue<Map.Entry<Integer, Integer>> minHeap =
+             new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
+
+         minHeap.addAll(map.entrySet());
         
-        return Stream.generate(minHeap::poll).limit(k)
-            .map(Map.Entry::getKey).mapToInt(Integer::intValue).toArray();
+         return Stream.generate(minHeap::poll).limit(k)
+             .map(Map.Entry::getKey).mapToInt(Integer::intValue).toArray();
+        
+        */
+        
+        PriorityQueue<Integer> heap = new PriorityQueue<>((a,b)-> map.get(b) - map.get(a));
+
+        heap.addAll(map.keySet());
+        
+        return Stream.generate(heap::poll).limit(k).mapToInt(Integer::intValue).toArray();
     }
 }
