@@ -19,13 +19,15 @@ class Solution {
 //             res[i] = maxHeap.poll();
 //         }
 //         return res;
+        
         PriorityQueue<Map.Entry<Integer, Integer>> maxHeap =
             new PriorityQueue<>((a, b) -> a.getValue() - b.getValue());
 
         for (Map.Entry entry : map.entrySet()){
             maxHeap.add(entry);
-            if (maxHeap.size() > k)
+            if (maxHeap.size() > k){
                 maxHeap.poll();
+            }
         }
         
         return Stream.generate(maxHeap::poll).limit(maxHeap.size())
