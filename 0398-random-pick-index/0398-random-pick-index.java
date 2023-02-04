@@ -5,9 +5,8 @@ class Solution {
     public Solution(int[] nums) {
         map = new HashMap<>();
         for(int i=0;i<nums.length;i++){
-            List<Integer> indexList = this.map.getOrDefault(nums[i], new ArrayList<>());
-            indexList.add(i);
-            this.map.put(nums[i], indexList);
+            map.putIfAbsent(nums[i], new ArrayList<Integer>());
+            map.get(nums[i]).add(i);
         }
     }
     
