@@ -3,31 +3,28 @@
  * public class ListNode {
  *     int val;
  *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ *     ListNode(int x) { val = x; }
  * }
  */
 class Solution {
     public boolean isPalindrome(ListNode head) {
-        Stack<Integer> stack = new Stack<>();
         ListNode fast = head;
         ListNode slow = head;
+        
+        Stack<ListNode> stack = new Stack<>();
         while(fast != null && fast.next != null){
-            stack.push(slow.val);
-            fast = fast.next.next;
+            stack.push(slow);
             slow = slow.next;
+            fast = fast.next.next;
         }
         
         if(fast != null)
             slow = slow.next;
         
-        int cur = head.val;
-        
-        while(!stack.isEmpty()){
+        ListNode cur;
+        while(slow != null){
             cur = stack.pop();
-            
-            if(slow.val != cur)
+            if(cur.val != slow.val)
                 return false;
             slow = slow.next;
         }
