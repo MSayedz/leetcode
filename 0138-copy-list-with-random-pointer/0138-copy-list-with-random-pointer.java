@@ -27,8 +27,8 @@ class Solution {
             return nodesMap.get(head);
         
         Node copiedNode = new Node(head.val);
-        
         nodesMap.put(head, copiedNode);
+        
         copiedNode.next = copyNode(head.next, nodesMap);
         copiedNode.random = copyNode(head.random, nodesMap);
         
