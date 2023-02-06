@@ -6,5 +6,7 @@ public class Solution {
             count+=(n>>i&1);
         
         return count;
+        // return (int) Integer.toBinaryString(n)
+        //     .chars().filter(ch -> ch == '1').count();
     }
 }
