@@ -6,18 +6,20 @@ class Solution {
         // Arrays.sort(nums);
         // return nums;
         
+        //Java 8
+        //return Arrays.stream(nums).map(n -> n*n).sorted().toArray();
         
-//         int n = nums.length;
-//         int i = 0, j = n - 1;
+        int n = nums.length;
+        int i = 0, j = n - 1;
         
-//         int[] res = new int[n];
-//         for (int k = n - 1; k >= 0; k--)
-//             if (Math.abs(nums[i]) > Math.abs(nums[j]))
-//                 res[k] = nums[i] * nums[i++];
-//             else
-//                 res[k] = nums[j] * nums[j--];
-//         return res;
-        
-        return Arrays.stream(nums).map(n -> n*n).sorted().toArray();
+        int[] res = new int[n];
+        for (int k = n - 1; k >= 0; k--) {
+            if (Math.abs(nums[i]) > Math.abs(nums[j])){
+                res[k] = nums[i] * nums[i++];
+            } else {
+                res[k] = nums[j] * nums[j--];
+            }
+        }
+        return res;
     }
 }
