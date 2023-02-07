@@ -24,7 +24,7 @@ class Solution {
         // head.next = null;
         // return res.next;
         
-        if(head == null || head.next ==null)
+        if(head == null || head.next == null)
             return head;
         
         ListNode cur = head;
@@ -32,7 +32,7 @@ class Solution {
         
         while(head.next != null){
             nextNode = head.next; 
-            head.next = nextNode.next;
+            head.next = head.next.next;
             nextNode.next = cur;
             cur = nextNode;
         }
