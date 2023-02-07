@@ -15,7 +15,10 @@ class Solution {
             }
         }
         
-        return res.stream().mapToInt(Integer::intValue).toArray();
+        int[] arr = new int[res.size()];
+        for(int k = 0; k < res.size();k++) 
+            arr[k] = res.get(k);
+        return arr;
         
         
 //         int[] count = new int[1001];
