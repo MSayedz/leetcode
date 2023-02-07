@@ -26,14 +26,17 @@ class Solution {
         for(int num:nums1)
             count[num]++;
 
-        List<Integer> res = new ArrayList();
+        List<Integer> list = new ArrayList();
         for(int num:nums2){
             if(count[num]>0){
-                res.add(num);
+                list.add(num);
                 count[num]--;
             }
         }
 
-        return res.stream().mapToInt(Integer::intValue).toArray();
+        int[] res = new int[list.size()];
+        for(int k = 0; k < list.size();k++) 
+            res[k] = list.get(k);
+        return res;
     }
 }
