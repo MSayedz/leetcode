@@ -32,7 +32,7 @@ class Solution {
         
         while(head.next != null){
             nextNode = head.next; 
-            head.next = head.next.next;
+            head.next = nextNode.next;
             nextNode.next = cur;
             cur = nextNode;
         }
