@@ -19,7 +19,6 @@ class Solution {
         
         
         int[] count = new int[1001];
-        int[] temp = new int[1001];
         
         for(int num:nums1)
             count[num]++;
