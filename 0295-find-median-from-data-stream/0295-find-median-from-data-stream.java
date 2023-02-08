@@ -4,7 +4,7 @@ class MedianFinder {
     /** initialize your data structure here. */
     public MedianFinder() {
         minHeap = new PriorityQueue<>();
-        maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        maxHeap = new PriorityQueue<>((a,b) -> b-a);
     }
 
 // Adds a number into the data structure.
