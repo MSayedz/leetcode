@@ -5,7 +5,7 @@ class Solution {
             if (n == 0) {
                 return 0; 
             } else if (n < 0) {
-                sign = -sign; 
+                sign *= -1; 
             }
         }
         return sign;        
