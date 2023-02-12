@@ -10,11 +10,11 @@ class Solution {
             sb.append(word1.charAt(i++)).append(word2.charAt(j++));
         }
         
-        while(i<word1.length() && j == word2.length()){
+        while(i<word1.length()){
             sb.append(word1.charAt(i++));
         }
         
-        while(i==word1.length() && j<word2.length()){
+        while(j<word2.length()){
             sb.append(word2.charAt(j++));
         }
         
