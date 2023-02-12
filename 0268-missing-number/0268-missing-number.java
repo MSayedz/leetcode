@@ -11,5 +11,11 @@ class Solution {
         
         return -1;
         
+        
+        // int sum = 0;
+        // for(int num: nums)
+        //     sum += num;
+        // return (nums.length * (nums.length + 1) )/ 2 - sum;
+        
     }
 }
