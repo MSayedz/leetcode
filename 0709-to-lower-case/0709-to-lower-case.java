@@ -4,7 +4,7 @@ class Solution {
          for(int i = 0;i<str.length();i++){
             char c =  str.charAt(i);
             if(c>='A' && c<='Z'){
-              c = (char)(c + 32);  
+              c = (char)(c - 'A' + 'a');  
             }           
              ch[i]=c;     
          }
