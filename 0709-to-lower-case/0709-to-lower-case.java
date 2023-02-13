@@ -5,7 +5,7 @@ class Solution {
             char c =  str.charAt(i);
             if(c>='A' && c<='Z'){
               c = (char)(c - 'A' + 'a');  
-            }           
+            }
              ch[i]=c;     
          }
         return new String(ch);
