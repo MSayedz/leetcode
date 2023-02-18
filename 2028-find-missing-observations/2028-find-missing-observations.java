@@ -6,9 +6,10 @@ class Solution {
             return new int[0];
         
         int[] res = new int[n];
-        Arrays.fill(res, missing/n);
-
-        for(int i=0;i<missing%n;i++)
+        int x = missing/n;
+        Arrays.fill(res, x);
+        int y = missing%n;
+        for(int i=0;i<y;i++)
             res[i]++;
 
         return res;
