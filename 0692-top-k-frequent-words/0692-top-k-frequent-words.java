@@ -12,10 +12,7 @@ class Solution {
         
         heap.addAll(map.keySet());
         
-        List<String> res = new ArrayList<>();
-		while(!heap.isEmpty() && k-- > 0) 
-			res.add(heap.poll());
-        return res;
-        // return heap.stream().limit(2).collect(Collectors.toList());
+        return Stream.generate(heap::poll)
+            .limit(k).collect(Collectors.toList());
     }
 }
