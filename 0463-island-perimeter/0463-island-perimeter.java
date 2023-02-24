@@ -6,20 +6,20 @@ class Solution {
                 if(grid[i][j] == 1){
                     if(i == 0)
                         res++;
+                    else if(grid[i-1][j] == 0)
+                        res++;
                     if(i == grid.length-1)
                         res++;
+                    else if(grid[i+1][j] == 0)
+                        res++;
+                    
                     if(j == 0) 
+                        res++;
+                    else if(grid[i][j-1] == 0)
                         res++;
                     if (j == grid[0].length-1)
                         res++;
-                    
-                    if(i != 0 && grid[i-1][j] == 0)
-                        res++;
-                    if(i != grid.length-1 && grid[i+1][j] == 0)
-                        res++;
-                    if(j != 0 && grid[i][j-1] == 0)
-                        res++;
-                    if(j != grid[0].length-1 && grid[i][j+1] == 0)
+                    else if(grid[i][j+1] == 0)
                         res++;
                 }
             }
