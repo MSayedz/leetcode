@@ -13,37 +13,37 @@ public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if(headA == null || headB == null)
             return null;
-        ListNode tempA = headA;
-        ListNode tempB = headB;
+        if(headA == headB)
+            return headA;
+        ListNode tempA = headA,tempB=headB;
+        int lA = 0,lB=0;
         
-        int countA=0;
-        int countB=0;
-        
-        while(tempA.next != null){
-            countA++;
-            tempA= tempA.next;
+        while(tempA != null){
+            lA++;
+            tempA = tempA.next;
+        }
+        while(tempB != null){
+            lB++;
+            tempB = tempB.next;
         }
         
-        while(tempB.next != null){
-            countB++;
-            tempB= tempB.next;
+        tempA = headA;
+        tempB = headB;
+        int diff = lA > lB ? lA-lB : lB-lA;
+        
+        if(lA > lB)
+            for(int i=0;i<diff;i++)
+                tempA = tempA.next;
+        else
+            for(int i=0;i<diff;i++)
+                tempB = tempB.next;
+        
+        while(tempA != tempB){
+            tempA = tempA.next;
+            tempB = tempB.next;
         }
         
-        if(tempA == tempB){
-            tempA = countA > countB ? headA : headB;
-            tempB = countA > countB ? headB : headA;
-            int dif = Math.abs(countA - countB);
-            
-            while(dif-- != 0)
-                tempA= tempA.next;
-            
-            while(tempA != tempB){
-                tempB= tempB.next;
-                tempA= tempA.next;
-            }
-            return tempA;
-        }
-        return null;
+        return tempA;
    
     }
 }
