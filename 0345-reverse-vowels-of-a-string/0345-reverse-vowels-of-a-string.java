@@ -5,9 +5,9 @@ class Solution {
         char[] chars = s.toCharArray();
         int i=0,j=s.length()-1;
         while(i<j){
-            while(i<s.length() && !isvowel(chars[i]))
+            while(i<j && !isvowel(chars[i]))
                 i++;
-            while(j>-1 && !isvowel(chars[j]))
+            while(i<j && !isvowel(chars[j]))
                 j--;
             if(i<j){
                 char temp = chars[i];
@@ -20,10 +20,11 @@ class Solution {
     }
     
     private boolean isvowel(char ch){
-        if(ch=='a'|| ch=='e'|| ch=='i'|| ch=='o'|| ch=='u'|| ch=='A'||ch=='E'
-        || ch=='I'|| ch=='O'|| ch=='U'){
+        if(ch=='a'|| ch=='e'|| ch=='i'|| ch=='o'|| ch=='u'
+           || ch=='A'||ch=='E' || ch=='I'|| ch=='O'|| ch=='U'){
             return true;
         }
+        
         return false;
     }
 }
