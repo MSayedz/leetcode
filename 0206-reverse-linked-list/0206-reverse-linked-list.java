@@ -24,18 +24,19 @@ class Solution {
         // head.next = null;
         // return res.next;
         
-        if(head == null || head.next == null)
+        /* iterative solution */
+        if (head == null || head.next == null)
             return head;
-        
-        ListNode cur = head;
         ListNode nextNode = null;
+        ListNode prevNode = null;
         
-        while(head.next != null){
-            nextNode = head.next; 
-            head.next = nextNode.next;
-            nextNode.next = cur;
-            cur = nextNode;
+        while(head != null){
+            nextNode = head.next;
+            head.next = prevNode;
+            prevNode = head;
+            head = nextNode;
         }
-        return cur;
+        
+        return prevNode;
     }
 }
