@@ -25,8 +25,6 @@ class Solution {
         // return res.next;
         
         /* iterative solution */
-        if (head == null || head.next == null)
-            return head;
         ListNode nextNode = null;
         ListNode prevNode = null;
         
