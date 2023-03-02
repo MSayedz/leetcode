@@ -1,5 +1,7 @@
 class Solution {
-    public boolean detectCapitalUse(String word) {     
+    public boolean detectCapitalUse(String word) {  
+        if (word.length() < 2)
+            return true;   
         int count = 0;
         for(char cur:word.toCharArray())
             if(cur - 'a' < 0)
