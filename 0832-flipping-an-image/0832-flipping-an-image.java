@@ -9,10 +9,9 @@ class Solution {
     public void reverse(int[] image){
         int start = 0;
         int end = image.length - 1;
-        int temp = image[start];
         
         while(start<=end){            
-            temp = image[start];
+            int temp = image[start];
             image[start++] = invert(image[end]);
             image[end--] = invert(temp);
         }
