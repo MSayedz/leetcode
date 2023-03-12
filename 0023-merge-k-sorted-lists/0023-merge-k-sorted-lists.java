@@ -8,7 +8,7 @@
  */
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        return mergeWithPriorityQueue(lists);
+        return divideConquerSolution(lists);
     }
     
     private ListNode mergeWithPriorityQueue(ListNode[] lists) {
