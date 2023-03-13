@@ -4,17 +4,17 @@ class Solution {
             return false;
         if(s.length()>t.length())
             return isOneEditDistance(t, s);
-        int count =0;
+        int count = 0;
         for(int i = 0, j=0;i<t.length();i++){
-            if(j<s.length() && s.charAt(j) == t.charAt(i))
+            if(j<s.length() && s.charAt(j) == t.charAt(i)){
                 j++;
-            else if(s.length() == t.length()){
+            } else if(s.length() == t.length()){
                 count++;
                 j++;
-            } else
+            } else{
                 count++;
+            }
         }
-        
         return count == 1;
     }
 }
