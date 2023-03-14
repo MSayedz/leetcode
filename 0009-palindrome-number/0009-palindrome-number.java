@@ -3,12 +3,6 @@ class Solution {
         if(x < 0){
             return false;
         }
-        // String s = "" + x;
-        // for(int i=0,j=s.length()-1;i<j;){
-        //     if(s.charAt(i++) != s.charAt(j--))
-        //         return false;
-        // }
-        // return true;
         
         int rev = 0;
         int temp = x;
