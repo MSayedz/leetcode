@@ -4,8 +4,6 @@ class Solution {
     }
     
     private boolean validPalindrome(String s, int start, int end, boolean hasDeleted) {
-        if (start >= end) return true;
-        
         while (start < end) {
             if (s.charAt(start) != s.charAt(end)) {
                 if (hasDeleted) 
