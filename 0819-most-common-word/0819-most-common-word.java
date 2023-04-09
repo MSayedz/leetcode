@@ -2,7 +2,7 @@ class Solution {
     public String mostCommonWord(String paragraph, String[] banned) {
         Map<String, Integer> wordsCount = new HashMap<>();
         Set<String> bannedWords 
-            = new HashSet<>(Arrays.asList(banned));
+            = Arrays.stream(banned).collect(Collectors.toSet());
         String resultWord = "";
         int maxCount = 0;
         String[] allWords = paragraph.split("\\W+");
