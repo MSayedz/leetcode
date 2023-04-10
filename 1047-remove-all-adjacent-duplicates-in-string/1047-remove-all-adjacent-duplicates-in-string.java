@@ -18,10 +18,7 @@ class Solution {
 //                 dequeue.removeLast();
 //         }
         
-//         StringBuilder sb = new StringBuilder();
-//         while(dequeue.size() != 0)
-//             sb.append(dequeue.removeFirst());
-        
-//         return sb.toString();
+//         return dequeue.stream().collect(StringBuilder::new, StringBuilder::append, StringBuilder::append).toString();
+
     }
 }
